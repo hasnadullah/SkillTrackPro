@@ -2,10 +2,10 @@
 
 .sidebar {
   width: 250px;
-  background: #1e1e1e;
+  background: #1852b0;
   color: white;
   padding: 20px;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
 }

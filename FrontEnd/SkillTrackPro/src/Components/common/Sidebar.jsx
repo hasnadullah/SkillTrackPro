@@ -11,23 +11,16 @@ const Sidebar = () => {
 
   const menu = {
     intern: [
-      { label: "Tasks", path: "/dashboard/intern" },
+      
     ],
     mentor: [
-      { label: "Dashboard", path: "/dashboard/mentor" },
-      { label: "Tasks", path: "/dashboard/mentor/interns" },
-      { label: "Users", path: "/dashboard/mentor/tasks" },
-      { label: "Meetings", path: "/dashboard/mentor/reports" },
+      
     ],
     hr: [
-      { label: "Users", path: "/dashboard/hr/users" },
-      { label: "Tasks", path: "/dashboard/hr/tasks" },
+      
     ],
     pseb: [
-      { label: "HR", path: "/dashboard/pseb/hr" },
-      { label: "Mentors", path: "/dashboard/pseb/mentors" },
-      { label: "Interns", path: "/dashboard/pseb/interns" },
-      { label: "Reports", path: "/dashboard/pseb/reports" },
+      
     ],
   };
 
