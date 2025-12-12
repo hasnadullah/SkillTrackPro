@@ -11,7 +11,7 @@ const DashboardLayout = ({ role, children }) => {
       <div style={{ flex: 1 }}>
         <Header />
 
-        <div style={{ padding: "20px" }}>
+        <div style={{ padding: "20px"}}>
           {children}
         </div>
 

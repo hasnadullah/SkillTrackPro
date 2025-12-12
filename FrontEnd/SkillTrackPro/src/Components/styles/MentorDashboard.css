@@ -1,0 +1,137 @@
+/* General Section Styling */
+.mentor-section {
+  margin: 30px 0;
+}
+
+.mentor-section h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Table Styling */
+.mentor-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f8f8f8;
+}
+
+.mentor-table th,
+.mentor-table td {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.mentor-table th {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.mentor-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mentor-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* Feedback Button */
+.feedback-btn {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.feedback-btn:hover {
+  background-color: #574fd6;
+}
+
+/* Feedback Modal */
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-content textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Modal Buttons */
+.submit-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Feedback List in Table */
+.mentor-table ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.mentor-table li {
+  margin-bottom: 5px;
+}
