@@ -1,0 +1,39 @@
+/* src/styles/HRDashboard.css */
+
+.hr-section {
+  margin-bottom: 40px;
+}
+
+.hr-section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.hr-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hr-table th,
+.hr-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.hr-table th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.hr-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.hr-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.hr-table ul {
+  padding-left: 15px;
+  margin: 0;
+}

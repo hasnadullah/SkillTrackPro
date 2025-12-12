@@ -23,4 +23,10 @@ def login_controller(user_data):
         "role": db_user["role"]
     })
 
-    return {"token": token}
+    return {
+    "token": token,
+    "role": db_user["role"],
+    "name": db_user["name"],
+    "email": db_user["email"]
+    }
+

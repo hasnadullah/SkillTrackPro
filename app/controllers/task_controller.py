@@ -6,7 +6,8 @@ def create_task_controller(task_data, intern_id):
     task_dict = task_data.dict()
     task_dict.update({"intern_id": intern_id, "status": "pending", "feedback": []})
     result = create_task_service(task_dict)
-    return {"message": "Task created", "task_id": str(result.inserted_id)}
+    return {"message": "Task created", "task_id": str(result["_id"])}  # use _id from dict
+
 
 def get_my_tasks_controller(intern_id):
     return get_tasks_by_intern_service(intern_id)

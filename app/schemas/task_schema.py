@@ -23,9 +23,9 @@ class TaskCreate(BaseModel):
     description: str
 
 class TaskUpdate(BaseModel):
-    title: Optional[str]
-    description: Optional[str]
-    status: Optional[str]
+    title: Optional[str] = None
+    description: Optional[str] =None
+    status: Optional[str] =None
 
 class Task(TaskCreate):
     intern_id: str

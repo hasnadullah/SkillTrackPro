@@ -5,9 +5,13 @@ from app.auth.jwt_handler import decode_access_token as decodeJWT
 class AuthTokenMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
 
+        # Skip auth for preflight OPTIONS requests
+        if request.method == "OPTIONS":
+            return await call_next(request)  # let CORSMiddleware handle it
+
         excluded_routes = [
             "/auth/login",
-            "/auth/register",
+            "/auth/signup",
             "/docs",
             "/openapi.json"
         ]
@@ -16,7 +20,6 @@ class AuthTokenMiddleware(BaseHTTPMiddleware):
             return await call_next(request)
 
         token = request.headers.get("Authorization")
-
         if not token:
             return Response("Missing Authorization Token", status_code=401)
 
