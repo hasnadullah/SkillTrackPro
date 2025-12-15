@@ -1,0 +1,96 @@
+.about-section {
+  padding: 80px 8%;
+  background-color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.about-header p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #555;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Cards */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 70px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 140px;
+  height: 90px;
+  border-radius: 8px;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Content Section */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.content-left {
+  flex: 1;
+}
+
+.content-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.content-left span {
+  color: #777;
+}
+
+.content-right {
+  flex: 1;
+}
+
+.content-right p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .content-left h2 {
+    font-size: 24px;
+  }
+}

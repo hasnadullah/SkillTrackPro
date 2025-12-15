@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -10,7 +11,7 @@ import MentorDashboard from "./Components/Dashboard/MentorDashboard.jsx";
 import HRDashboard from "./Components/Dashboard/HRDashboard.jsx";
 import PSEBDashboard from "./Components/Dashboard/PSEBDashboard.jsx";
 
-// Role based router
+// Role-based router
 import DashboardRouter from "./Components/DashboardRoutes.jsx";
 
 // ProtectedRoute
@@ -27,7 +28,7 @@ function App() {
         <Route path="/login" element={<AuthPage type="login" />} />
         <Route path="/signup" element={<AuthPage type="signup" />} />
 
-        {/* Main dashboard routing with wildcard (* required!) */}
+        {/* Generic dashboard route */}
         <Route
           path="/dashboard/*"
           element={
@@ -37,7 +38,7 @@ function App() {
           }
         />
 
-        {/* Explicit dashboards — access controlled */}
+        {/* Explicit dashboards for direct access (optional) */}
         <Route
           path="/dashboard/intern"
           element={
@@ -46,7 +47,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/dashboard/mentor"
           element={
@@ -55,7 +55,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/dashboard/hr"
           element={
@@ -64,7 +63,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/dashboard/pseb"
           element={

@@ -17,22 +17,22 @@ body {
 #page-wrapper { 
     min-height: 100vh;
     max-width: 1360px;
-    background-color: #0052cc; /* Jira Blue Background for the main body */
+    background-color: #ffffff; /* Jira Blue Background for the main body */
     display: flex;
     flex-direction: column;
     margin: auto;
 }
 
-/* --- Header (Pure White) --- */
+
 #main-header {
-    background-color: white; /* Pure White */
+    background-color: #f4f4f4; 
     padding: 15px 40px;
     border-bottom: 1px solid #ebecf0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 60px;
-    flex-shrink: 0; /* Prevents header from shrinking */
+    flex-shrink: 0; 
 }
 
 .logo-container {
@@ -49,383 +49,37 @@ body {
 .project-name {
     font-size: 20px;
     font-weight: bold;
-    color: #0052cc; /* Blue for contrast */
+    color: #000000; /* Blue for contrast */
 }
 
 
-#main-content {
-    flex-grow: 1; 
+.LayoutD {
     display: flex;
+    width: 100%;
+    max-width: 1300px;
     justify-content: center;
-    align-items: flex-start;
-    padding: 50px 40px;
-    color: white;
-    
-}
-
-.content-wrapper {
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-    align-items: flex-start;
-    justify-content: space-between;
-    
-}
-
-.left-panel {
-    flex: 1;
-    max-width: 450px;
-    padding-right: 50px;
-}
-
-.headline {
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 15px;
-}
-
-.subtext {
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-
-/* --- Form Wrapper (White Background) --- */
-.form-wrapper {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: #42526e; /* Dark text for the form area */
-    transition: transform 1s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
-    transform-style: preserve-3d; /* enable 3D rotation */
-}
-
-.form-wrapper:hover {
-    box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.3);
-    border: 2px solid #42526e; /* fixed syntax for border */
-    background-color: whitesmoke;
-    transform: rotateY(360deg); /* smooth rotation now works */
-}
-/* Form Styles */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #FF9900; /* Jira Orange */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s;
+    margin: auto;
 }
 
 
-
-.or-divider {
-    text-align: center;
-    margin: 20px 0;
-    color: #6b778c;
-    font-size: 14px;
-}
-
-.social-container {
-    display: flex;
-    gap: 10px;
-}
-
-.social-button {
-    flex: 1;
-    padding: 12px;
-    background-color: white;
-    color: #42526e;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-}
-.social-button:hover {
-    background-color: #0e9dd5;
-    color: white;
-    border-color: #42526e;
-    transform: rotateY(360deg);
-}
-
-/* Error Message Style */
-.error-message {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* --- Right Panel (Illustrative) --- */
-.right-panel {
-    flex: 1;
-    padding-left: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    height: 500px;
-}
-
-
-
-.privacy-link {
-    /* Use the link tag's styling from the CSS, not an anchor tag */
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-    font-size: 14px;
-    color: #a6c5e2; 
-}
-.privacy-link h1 {
-    font-size: 100px;
-    margin-bottom: 10px;
-    color: white;
-    transition: transform 0.5s, text-decoration 0.3s; /* smooth animation */
-}
-
-.privacy-link h1:hover {
-    text-decoration: underline;
-    transform: rotateY(15deg) scale(1.05); /* subtle 3D rotation + scale on hover */
-    transform-style: preserve-3d; /* for proper 3D effect */
-}
-
-
-/* --- Switch Link --- */
-.switch-link {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 16px;
-}
-
-/* Styling for the text that acts as a link */
-.switch-link span {
-    color: #a6c5e2;
-    text-decoration: underline;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* --- Footer (Pure White) --- */
-#main-footer {
-    background-color: white; /* Pure White */
-    color: #6b778c;
-    padding: 15px 40px;
-    text-align: center;
-    border-top: 1px solid #ebecf0;
-    height: 50px;
-    font-size: 14px;
-    flex-shrink: 0; /* Prevents footer from shrinking */
-}
-
-/* Add this to your src/styles.css */
-
-/* Style for select dropdowns */
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white; 
-    appearance: none; 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-    .content-wrapper {
-        flex-direction: column;
+@media (max-width: 932px) {
+    .LayoutD {
+        width: 100%;
+        max-width: 900px;
+        padding: 20px 20px;
+        margin: auto;
         align-items: center;
     }
-    .left-panel, .right-panel {
-        padding-right: 0;
-        padding-left: 0;
-        max-width: 100%;
-    }
-    .right-panel {
-        display: none; /* Hide illustrative panel on small screens */
-    }
-}
-@media (max-width: 1024px) {
-    #main-content {
-        padding: 40px 20px;
-    }
-
-    .headline {
-        font-size: 32px;
-    }
-
-    .left-panel {
-        max-width: 100%;
-        padding-right: 20px;
-    }
-
-    .right-panel {
-        padding-left: 20px;
-    }
-
-    .form-wrapper {
-        padding: 25px;
-    }
 }
 
-/* ----------- Tablets & Large Phones (Portrait) ----------- */
-@media (max-width: 768px) {
-    #main-header {
-        padding: 15px 20px;
-        height: 55px;
-    }
 
-    .project-name {
-        font-size: 18px;
-    }
-
-    #main-content {
-        padding: 30px 20px;
-    }
-
-    .content-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .left-panel {
-        padding-right: 0;
-    }
-
-    .headline {
-        font-size: 28px;
-    }
-
-    .subtext {
-        font-size: 15px;
-    }
-
-    .right-panel {
-        display: none; /* Hide illustration */ 
-    }
-
-    .form-wrapper {
+@media (max-width: 676px) {
+    .LayoutD {
         width: 100%;
-        margin-top: 30px;
-    }
-}
-
-/* ----------- Mobile Landscape ----------- */
-@media (max-width: 600px) and (orientation: landscape) {
-    #main-content {
-        padding: 20px;
-    }
-
-    .headline {
-        font-size: 24px;
-    }
-
-    .form-wrapper {
-        padding: 20px;
-    }
-
-    .form-group input,
-    .form-group select {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .form-button {
-        padding: 12px;
-        font-size: 15px;
-    }
-}
-
-/* ----------- Mobile Phones (Portrait) ----------- */
-@media (max-width: 480px) {
-    #main-header {
-        padding: 10px 15px;
-    }
-
-    .logo {
-        width: 26px;
-        height: 26px;
-    }
-
-    .project-name {
-        font-size: 16px;
-    }
-
-    #main-content {
-        padding: 25px 15px;
-    }
-
-    .headline {
-        font-size: 22px;
-        line-height: 1.2;
-    }
-
-    .subtext {
-        font-size: 14px;
-    }
-
-    .form-wrapper {
-        padding: 18px;
-    }
-
-    .form-group label {
-        font-size: 14px;
-    }
-
-    .form-group input,
-    .form-group select {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .form-button {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    .switch-link {
-        font-size: 14px;
-    }
-}
-
-/* ----------- Very Small Phones (Galaxy Fold, iPhone Mini) ----------- */
-@media (max-width: 360px) {
-    .headline {
-        font-size: 18px;
-    }
-
-    .form-wrapper {
-        padding: 15px;
-    }
-
-    #main-header {
-        padding: 8px 10px;
+        max-width: 100%;
+        padding: 15px 15px;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
     }
 }

@@ -4,6 +4,10 @@ import api from '../../api/Axiosconfig.jsx';   // your axios instance
 import Header from '../common/Header.jsx';
 import Footer from '../common/Footer.jsx';
 import AuthForm from './AuthForm.jsx';
+import "../styles/AuthPage.css"
+import AboutUs from '../common/AboutUs.jsx';
+import TeamMember from '../common/TeamMember.jsx';
+import Contact from '../common/Contact.jsx';
 
 const AuthPage = ({ type }) => {
   const isSignup = type === 'signup';
@@ -95,7 +99,10 @@ const AuthPage = ({ type }) => {
           </div>
         </div>
       </main>
-
+      <AboutUs />
+      <TeamMember />
+      <Contact />
+      
       <Footer />
     </div>
   );

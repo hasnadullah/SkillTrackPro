@@ -80,6 +80,7 @@ const PSEBDashboard = () => {
   }, []);
 
   return (
+    <div className="PSEB"> 
     <DashboardLayout role="pseb">
       <h1>PSEB Dashboard</h1>
 
@@ -254,6 +255,7 @@ const PSEBDashboard = () => {
         </div>
       </section>
     </DashboardLayout>
+    </div>
   );
 };
 

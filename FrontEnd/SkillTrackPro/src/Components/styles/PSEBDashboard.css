@@ -1,148 +1,226 @@
-/* src/styles/PSEBDashboard.css */
 
-/* General Section Styles */
+h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+.PSEB {
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+}
+
 .pseb-section {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #f8f8f8;
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .pseb-section h2 {
+  font-size: 20px;
   margin-bottom: 15px;
-  color: #4b0082;
+  color: #333;
 }
 
-/* Tables */
+
 .pseb-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  background: white;
 }
 
 .pseb-table th,
 .pseb-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
+  padding: 12px;
   text-align: left;
+  vertical-align: top;
 }
 
-.pseb-table th {
-  background-color: #4b0082;
+.pseb-table thead {
+  background: #6c63ff;
   color: white;
 }
 
 .pseb-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background: #f7f8fc;
 }
 
 .pseb-table tr:hover {
-  background-color: #e0d4f7;
+  background: #eef0ff;
 }
 
-/* Form Section (Assign Task / Schedule Meeting) */
+
+.pseb-table ul {
+  padding-left: 15px;
+  font-size: 13px;
+}
+
+.pseb-table li {
+  margin-bottom: 4px;
+}
+
+.pseb-table em {
+  font-size: 11px;
+  color: #777;
+}
+
+
 .pseb-form {
-  margin-top: 15px;
+  margin-top: 20px;
+  background: #f9f9ff;
   padding: 15px;
-  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
 }
 
 .pseb-form h3 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.pseb-form input,
-.pseb-form select,
-.pseb-form textarea {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  min-width: 150px;
-}
-
-.pseb-form textarea {
   width: 100%;
-  resize: vertical;
-  min-height: 60px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
+
+
+.pseb-form select,
+.pseb-form input {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
 
 .pseb-form button {
-  padding: 8px 15px;
-  background-color: #4b0082;
-  color: white;
+  padding: 7px 14px;
+  border-radius: 6px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  background: #6c63ff;
+  color: white;
+  transition: 0.2s ease;
 }
 
 .pseb-form button:hover {
-  background-color: #6a1ab2;
+  opacity: 0.85;
 }
 
-/* Feedback / Modal (optional) */
-.feedback-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
+
+@media (max-width: 768px) {
+  .PSEB {
+  max-width: 768px;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
+  margin: auto;
   justify-content: center;
-  z-index: 1000;
 }
 
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  max-width: 90%;
+  h1 {
+    font-size: 22px;
+  }
+
+  .pseb-section {
+    padding: 15px;
+    
+
+  }
+
+  .pseb-section h2 {
+    font-size: 17px;
+  }
+
+  .pseb-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pseb-form select,
+  .pseb-form input,
+  .pseb-form button {
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+  }
 }
 
-.modal-content h3 {
-  margin-bottom: 10px;
-  color: #4b0082;
+@media (max-width: 932px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .pseb-section {
+    padding: 18px;
+  }
+
+  .pseb-section h2 {
+    font-size: 18px;
+  }
+
+  .pseb-table th,
+  .pseb-table td {
+    padding: 10px;
+  }
+
+  .pseb-form h3 {
+    font-size: 15px;
+  }
+
+  .pseb-form select,
+  .pseb-form input {
+    min-width: 140px;
+  }
 }
 
-.modal-actions {
-  margin-top: 10px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
 
-.submit-btn {
-  background-color: #4b0082;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+@media (max-width: 676px) {
+  h1 {
+    font-size: 20px;
+  }
 
-.submit-btn:hover {
-  background-color: #6a1ab2;
-}
+  .pseb-section {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
 
-.cancel-btn {
-  background-color: #ccc;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+  .pseb-section h2 {
+    font-size: 16px;
+  }
 
-.cancel-btn:hover {
-  background-color: #999;
+  .pseb-table th,
+  .pseb-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .pseb-table ul {
+    font-size: 11px;
+    padding-left: 10px;
+  }
+
+  .pseb-table li {
+    margin-bottom: 3px;
+  }
+
+  .pseb-table em {
+    font-size: 10px;
+  }
+
+  .pseb-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .pseb-form select,
+  .pseb-form input,
+  .pseb-form button {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .pseb-form h3 {
+    font-size: 14px;
+  }
 }
