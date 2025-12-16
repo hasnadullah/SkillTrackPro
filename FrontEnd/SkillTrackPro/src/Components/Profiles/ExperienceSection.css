@@ -1,0 +1,116 @@
+.experience-section {
+  padding: 80px 100px;
+  background-color: #ffffff;
+}
+
+/* TITLE */
+.experience-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+.experience-title span {
+  color: #6c2cff;
+}
+
+/* MAIN LAYOUT */
+.experience-container {
+  display: flex;
+  gap: 60px;
+}
+
+/* LEFT LIST */
+.company-list {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #eee;
+}
+
+.company-btn {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 16px;
+  color: #777;
+  cursor: pointer;
+  position: relative;
+}
+
+.company-btn:hover {
+  color: #111;
+}
+
+.company-btn.active {
+  color: #6c2cff;
+  font-weight: 600;
+}
+
+.company-btn.active::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #6c2cff;
+}
+
+/* RIGHT CONTENT */
+.experience-details {
+  max-width: 700px;
+}
+
+.role {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.duration {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.points {
+  list-style: none;
+  padding-left: 0;
+}
+
+.points li {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.points li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #6c2cff;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .experience-container {
+    flex-direction: column;
+  }
+
+  .company-list {
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 2px solid #eee;
+  }
+
+  .company-btn.active::before {
+    display: none;
+  }
+}

@@ -1,0 +1,113 @@
+.hr-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* LEFT CONTENT */
+.hr-hero-content {
+  max-width: 600px;
+}
+
+.hr-greeting {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.hr-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.hr-title span {
+  color: #6c2cff; /* Purple highlight */
+}
+
+.hr-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.hr-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background-color: #111;
+  color: #fff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: #f2f2f2;
+  color: #111;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #e6e6e6;
+}
+
+/* RIGHT IMAGE */
+.hr-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-ring {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px solid #d6c8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-ring img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hr-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hr-buttons {
+    justify-content: center;
+  }
+
+  .hr-hero-image {
+    margin-top: 40px;
+  }
+}

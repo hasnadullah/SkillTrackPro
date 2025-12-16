@@ -1,25 +1,33 @@
+// layouts/DashboardLayout.jsx (UPDATED)
+
 import React from "react";
 import Header from "../common/Header.jsx";
 import Footer from "../common/Footer.jsx";
 import Sidebar from "../common/Sidebar.jsx";
-import AboutUs from "../common/AboutUs.jsx";
-import TeamMember from "../common/TeamMember.jsx";
-import "../../styles.css"
-const DashboardLayout = ({ role, children }) => {
+import { useLocation } from "react-router-dom";
+import "../../styles.css";
+
+const DashboardLayout = ({ role, children, setActiveSection }) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const userRole = role || "INTERN";
+
   return (
     <div className="LayoutD">
-      
+      <Header />
 
-      <div style={{ flex: 1 }}>
-        <Header />
+      <div className="dashboard-body">
+        <Sidebar
+          role={userRole}
+          currentPath={currentPath}
+          setActiveSection={setActiveSection} // ✅ IMPORTANT
+        />
 
-        <div style={{ padding: "20px"}}>
-          {children}
-        </div>
-        
-
-        <Footer />
+        <main className="dashboard-content">{children}</main>
       </div>
+
+      <Footer />
     </div>
   );
 };

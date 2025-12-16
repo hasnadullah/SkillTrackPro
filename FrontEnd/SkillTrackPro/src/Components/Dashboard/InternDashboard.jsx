@@ -1,7 +1,9 @@
+// ...imports
 import React, { useEffect, useState } from "react";
 import DashboardLayout from "../layout/DashboardLayout.jsx";
 import api from "../../api/Axiosconfig.jsx";
-import "../styles/InternDashboard.css";   // 👈 external CSS
+import "../styles/InternDashboard.css";
+import ConfirmDeleteCard from "../Cards/ConfirmDeleteCard.jsx";
 
 const InternDashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -12,6 +14,9 @@ const InternDashboard = () => {
     description: "",
     status: "",
   });
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState(null);
 
   const fetchTasks = async () => {
     try {
@@ -39,10 +44,11 @@ const InternDashboard = () => {
     }
   };
 
-  const deleteTask = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this task?")) return;
+  const deleteTask = async () => {
     try {
-      await api.delete(`/tasks/delete/${id}`);
+      await api.delete(`/tasks/delete/${taskToDelete}`);
+      setShowDeleteModal(false);
+      setTaskToDelete(null);
       fetchTasks();
     } catch (err) {
       console.error(err);
@@ -189,13 +195,21 @@ const InternDashboard = () => {
                 )}
               </td>
 
+              {/* Fixed Feedback */}
               <td>
                 {task.feedback?.length ? (
                   <ul className="feedback-list">
                     {task.feedback.map((fb, i) => (
                       <li key={i}>
-                        {fb.comment || "No comment"}
-                        <em> ({new Date(fb.date).toLocaleString()})</em>
+                        {typeof fb.comment === "string"
+                          ? fb.comment
+                          : fb.comment?.text || "No comment"}
+                        <em>
+                          {" "}
+                          ({fb.date
+                            ? new Date(fb.date).toLocaleString()
+                            : "No date"})
+                        </em>
                       </li>
                     ))}
                   </ul>
@@ -224,7 +238,10 @@ const InternDashboard = () => {
                     </button>
                     <button
                       className="btn btn-delete"
-                      onClick={() => deleteTask(task._id)}
+                      onClick={() => {
+                        setTaskToDelete(task._id);
+                        setShowDeleteModal(true);
+                      }}
                     >
                       Delete
                     </button>
@@ -235,6 +252,16 @@ const InternDashboard = () => {
           ))}
         </tbody>
       </table>
+
+      {/* DELETE CONFIRMATION CARD */}
+      <ConfirmDeleteCard
+        show={showDeleteModal}
+        onDelete={deleteTask}
+        onCancel={() => {
+          setShowDeleteModal(false);
+          setTaskToDelete(null);
+        }}
+      />
     </DashboardLayout>
   );
 };

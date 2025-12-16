@@ -16,6 +16,7 @@ h1 {
   margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
 }
 
 .pseb-section h2 {
@@ -23,12 +24,57 @@ h1 {
   margin-bottom: 15px;
   color: #333;
 }
+.pseb-table-1 {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: small;
+  
+}
+
+.pseb-table-1 th,
+.pseb-table-1 td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.pseb-table-1 thead {
+  background: #6c63ff;
+  color: white;
+}
+
+.pseb-table-1 tr:nth-child(even) {
+  background: #f7f8fc;
+}
+
+.pseb-table-1 tr:hover {
+  background: #eef0ff;
+}
+
+
+.pseb-table-1 ul {
+  padding-left: 15px;
+  font-size: 13px;
+}
+
+.pseb-table-1 li {
+  margin-bottom: 4px;
+}
+
+.pseb-table-1 em {
+  font-size: 11px;
+  color: #777;
+}
+
+
 
 
 .pseb-table {
   width: 100%;
   border-collapse: collapse;
   background: white;
+  
 }
 
 .pseb-table th,

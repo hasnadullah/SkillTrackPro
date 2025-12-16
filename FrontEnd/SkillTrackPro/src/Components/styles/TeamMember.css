@@ -55,3 +55,20 @@
   font-size: 14px;
   color: #777;
 }
+ .team-card button{
+  padding: 0;
+  height: 30px;
+  width: 60px;
+  align-content: center;
+  background-color: rgb(212, 212, 212);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  border: 1px solid;
+  cursor:pointer;
+  border: none;
+}
+.team-card button:hover{
+  background-color: #000000;
+  color: aliceblue;
+}

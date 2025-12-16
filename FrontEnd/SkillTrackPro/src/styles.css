@@ -25,42 +25,67 @@ body {
 
 
 #main-header {
-    background-color: #f4f4f4; 
-    padding: 15px 40px;
+    background-color: #f4f4f4;
+    padding: 0 40px;
     border-bottom: 1px solid #ebecf0;
-    display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: flex-start;
-    height: 60px;
-    flex-shrink: 0; 
+    height: 50px;
+    flex-shrink: 0;
 }
 
 .logo-container {
     display: flex;
-    align-items: center;
+    align-items: center; 
+    gap: 10px;
 }
 
 .logo {
-    width: 30px; 
+    width: 30px;
     height: 30px;
-    margin-right: 10px;
+    display: block;
 }
 
 .project-name {
     font-size: 20px;
     font-weight: bold;
-    color: #000000; /* Blue for contrast */
+    color: #000000;
+    line-height: 1.2;
+    margin: 0;
 }
 
+/* --- Dashboard Layout Styles (Add this to your styles.css) --- */
 
 .LayoutD {
-    display: flex;
-    width: 100%;
+    width: 1300px;
     max-width: 1300px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: auto;
+   
 }
 
+.dashboard-body {
+    /* Use flex to arrange children (Sidebar and Content) side-by-side */
+    display: flex;
+    flex-grow: 1; /* Allows it to take up all vertical space between Header and Footer */
+}
+
+/* Styling for the main content area wrapper.
+  This is where the content padding goes.
+*/
+.dashboard-content {
+    flex-grow: 1; /* Allows the content area to take up all remaining width */
+    padding: 20px; /* Apply the desired internal padding here */
+    overflow-y: auto; /* Allows content to scroll if it exceeds height */
+}
+
+/* Make sure your Sidebar component is also styled in your sidebar.css 
+  to have a fixed width (e.g., 240px) and a fixed height (e.g., 100vh 
+  or 100% of the parent dashboard-body height)
+*/
 
 @media (max-width: 932px) {
     .LayoutD {

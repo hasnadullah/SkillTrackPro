@@ -7,6 +7,7 @@ const TeamMember = ({ image, name, role }) => {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p>{role}</p>
+      
     </div>
   );
 };

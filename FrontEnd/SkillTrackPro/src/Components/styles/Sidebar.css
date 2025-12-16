@@ -1,50 +1,263 @@
-/* src/styles/Sidebar.css */
 
-.sidebar {
-  width: 250px;
-  background: #1852b0;
-  color: white;
-  padding: 20px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+:root {
+    --color-primary: #3f51b5; 
+    --color-primary-light: #f0f4ff;
+    --color-secondary-badge: #ff6f00; 
+    --color-text-dark: #333;
+    --color-text-light: #888;
+    --color-background-light: #fff;
+    --color-background-grey: #f0f0f0;
+    --color-border-light: #eee;
+    --sidebar-width: 240px;
 }
 
-.sidebar-user {
-  margin-bottom: 15px;
-  font-size: 14px;
-  background: #2a2a2a;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  color: #f0f0f0;
+
+.sidebar-container {
+    width: 180px;
+    position: sticky;
+    top: 0;
+    height: 100vh; /* still viewport height */
+    overflow-y: auto; /* scrolls if content is taller */
+    background-color: #ffffff;
+    padding: 16px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--color-border-light);
+    color: #00000000;
+    
 }
 
-.sidebar-user strong {
-  color: #f0f0f0;
+.logo-container {
+    margin-bottom: 24px;
+    padding: 8px;
 }
 
-.sidebar-title {
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+.app-logo {
+    width: 30px; 
+    height: 30px;
+    margin-right: 10px;
 }
+
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; 
+}
+
 
 .sidebar-item {
-  margin-bottom: 15px;
+  font-family: "Euclid Circular A";
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+    font-size: 17px;
+    transition: background-color 0.1s ease;
+    color: #000000;
 }
 
-.sidebar-link {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.2s ease;
+.sidebar-item:hover {
+    background-color: var(--color-primary-light);
 }
 
-.sidebar-link:hover {
-  background: #333333;
+.sidebar-icon {
+    margin-right: 12px;
+    font-size: 18px; 
+    line-height: 1;
 }
+
+.sidebar-label {
+    flex-grow: 1;
+    white-space: nowrap;
+}
+
+
+.sidebar-item--active {
+    background-color: var(--color-primary-light); 
+    font-weight: 600;
+    color: var(--color-primary); 
+}
+
+
+.sidebar-badge {
+    margin-left: auto;
+    background-color: var(--color-background-grey);
+    color: var(--color-text-dark);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: normal;
+    min-width: 10px;
+    text-align: center;
+}
+
+
+.sidebar-badge--active {
+    background-color: var(--color-secondary-badge); 
+    color: var(--color-background-light);
+    font-weight: 600;
+}
+
+
+.schedule-right-group {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+}
+.plus-icon-grey {
+    font-size: 10px;
+    color: var(--color-text-light);
+    margin-right: 4px;
+    padding: 2px;
+    font-weight: 600;
+}
+
+/* --- Collapsible Item Styles (Chevron) --- */
+.sidebar-chevron {
+    margin-left: 8px;
+    font-size: 10px;
+    transition: transform 0.2s;
+    line-height: 1;
+}
+.sidebar-chevron.rotated {
+    transform: rotate(180deg);
+}
+
+
+/* --- Submenu (Income > Earnings, Refunds, etc.) --- */
+.submenu-container {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 8px 0;
+    padding-left: 32px; 
+    position: relative;
+}
+
+/* Vertical line visual for submenu */
+.submenu-container::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-border-light);
+}
+
+.submenu-item {
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: var(--color-text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submenu-item:hover {
+    background-color: var(--color-background-grey);
+}
+
+/* Active Submenu Item (Refunds) */
+.submenu-item--active {
+    background-color: var(--color-background-grey);
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.submenu-arrow {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* =========================
+   RESPONSIVE SIDEBAR
+========================= */
+
+/* -------- Tablet -------- */
+@media (max-width: 992px) {
+  .sidebar-container {
+    width: 160px;
+    padding: 14px 6px;
+  }
+
+  .sidebar-item {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .sidebar-icon {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .submenu-container {
+    padding-left: 28px;
+  }
+
+  .submenu-item {
+    font-size: 13px;
+  }
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 768px) {
+  .sidebar-container {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    z-index: 2000;
+    background-color: #ffffff;
+    transition: left 0.3s ease;
+  }
+
+  /* when sidebar is open */
+  .sidebar-container.open {
+    left: 0;
+  }
+
+  /* overlay effect (optional) */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1500;
+  }
+
+  .sidebar-item {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .submenu-container {
+    padding-left: 30px;
+  }
+}
+
+/* -------- Very Small Devices -------- */
+@media (max-width: 480px) {
+  .sidebar-container {
+    width: 200px;
+  }
+
+  .sidebar-label {
+    font-size: 14px;
+  }
+
+  .sidebar-badge {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+}
+
+

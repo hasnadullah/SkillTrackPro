@@ -1,5 +1,5 @@
 /* ===============================
-   PAGE TITLE
+   HEADINGS
 ================================ */
 h1 {
   font-size: 28px;
@@ -8,7 +8,7 @@ h1 {
 }
 
 /* ===============================
-   SECTIONS (Tasks, Meetings)
+   MENTOR SECTION
 ================================ */
 .mentor-section {
   background: #ffffff;
@@ -16,6 +16,8 @@ h1 {
   margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%; /* make responsive instead of fixed 1050px */
+  max-width: 1050px;
 }
 
 .mentor-section h2 {
@@ -25,7 +27,7 @@ h1 {
 }
 
 /* ===============================
-   TABLE (SAME THEME)
+   TABLE STYLING
 ================================ */
 .mentor-table {
   width: 100%;
@@ -53,9 +55,6 @@ h1 {
   background: #eef0ff;
 }
 
-/* ===============================
-   FEEDBACK LIST
-================================ */
 .mentor-table ul {
   padding-left: 15px;
   font-size: 13px;
@@ -71,7 +70,7 @@ h1 {
 }
 
 /* ===============================
-   BUTTONS (SAME STYLE)
+   BUTTONS
 ================================ */
 .feedback-btn {
   padding: 7px 14px;
@@ -85,54 +84,6 @@ h1 {
 
 .feedback-btn:hover {
   opacity: 0.85;
-}
-
-/* ===============================
-   MODAL (Add Feedback)
-================================ */
-.feedback-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.modal-content {
-  background: white;
-  width: 400px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.modal-content h3 {
-  margin-bottom: 10px;
-}
-
-/* ===============================
-   TEXTAREA
-================================ */
-.modal-content textarea {
-  width: 100%;
-  min-height: 100px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  resize: none;
-}
-
-/* ===============================
-   MODAL ACTIONS
-================================ */
-.modal-actions {
-  margin-top: 15px;
-  text-align: right;
 }
 
 .submit-btn {
@@ -160,6 +111,61 @@ h1 {
 }
 
 /* ===============================
+   MODAL
+================================ */
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   TEXTAREA FIX
+================================ */
+.modal-content textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: none;
+
+  /* Fix reverse typing issue */
+  direction: ltr;  /* ensure left-to-right typing */
+  text-align: left;
+  font-family: inherit; /* inherit font from parent */
+  font-size: 14px;
+  outline: none;
+}
+
+/* ===============================
+   MODAL ACTIONS
+================================ */
+.modal-actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+/* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
@@ -178,12 +184,6 @@ h1 {
   .modal-content {
     width: 90%;
   }
-}
-
-.feedback-list {
-  list-style: none; /* Removes the bullet points */
-  padding-left: 0;  /* Removes default left padding */
-  margin: 0;        /* Optional: remove margin if needed */
 }
 
 @media (max-width: 932px) {
@@ -213,7 +213,6 @@ h1 {
   }
 }
 
-/* Small screens (Mobiles) */
 @media (max-width: 676px) {
   h1 {
     font-size: 20px;
@@ -262,4 +261,13 @@ h1 {
     padding: 6px 12px;
     font-size: 12px;
   }
+}
+
+/* ===============================
+   FEEDBACK LIST (remove bullets)
+================================ */
+.feedback-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }

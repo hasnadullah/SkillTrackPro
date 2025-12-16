@@ -4,7 +4,6 @@
   background-color: rgb(255, 255, 255);
 }
 
-
 .task-form {
   background: #fff;
   padding: 20px;
@@ -26,13 +25,13 @@
 
 .input-wide {
   width: 300px;
+  max-width: 100%;
 }
 
 .select {
   padding: 6px;
   border-radius: 6px;
 }
-
 
 .btn {
   padding: 7px 14px;
@@ -53,16 +52,19 @@
   opacity: 0.85;
 }
 
-
 .task-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  table-layout: fixed; /* keeps columns even */
 }
 
 .task-table th,
 .task-table td {
   padding: 12px;
+  text-align: left;
+  vertical-align: top;  /* align content to top */
+  word-wrap: break-word; /* wrap long text */
+  white-space: normal;   /* allow wrapping */
 }
 
 .task-table thead {
@@ -74,20 +76,20 @@
   background: #f7f8fc;
 }
 
+/* Limit Description column width */
+.task-table td:nth-child(2) {
+  max-width: 250px;
+}
+
 .status.pending { color: orange; }
 .status.in-progress { color: blue; }
 .status.completed { color: green; }
 
-
 .feedback-list {
-  padding-left: 15px;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
   font-size: 13px;
-}
-
-.feedback-list {
-  list-style: none; 
-  padding-left: 0;  
-  margin: 0;        
 }
 
 .profile-bar {
@@ -136,7 +138,7 @@
   background: #c0392b;
 }
 
-
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 932px) {
   .input-wide {
     width: 200px;
@@ -162,7 +164,6 @@
     font-size: 24px;
   }
 }
-
 
 @media (max-width: 676px) {
   .task-form {
