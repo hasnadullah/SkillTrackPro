@@ -5,6 +5,7 @@
   padding: 80px 100px;
   background-color: #ffffff;
   min-height: 100vh;
+  max-width: 1050px;
 }
 
 /* LEFT CONTENT */
@@ -110,4 +111,8 @@
   .hr-hero-image {
     margin-top: 40px;
   }
+}
+.Main{
+    width: 1050;
+    max-width: 1050;
 }

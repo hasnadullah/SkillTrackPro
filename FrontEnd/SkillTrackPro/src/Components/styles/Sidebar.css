@@ -1,250 +1,192 @@
-
 :root {
-    --color-primary: #3f51b5; 
-    --color-primary-light: #f0f4ff;
-    --color-secondary-badge: #ff6f00; 
-    --color-text-dark: #333;
-    --color-text-light: #888;
-    --color-background-light: #fff;
-    --color-background-grey: #f0f0f0;
-    --color-border-light: #eee;
-    --sidebar-width: 240px;
+  --color-primary: #3f51b5;
+  --color-primary-light: #f0f4ff;
+  --color-secondary-badge: #ff6f00;
+  --color-text-dark: #333;
+  --color-text-light: #888;
+  --color-background-light: #fff;
+  --color-background-grey: #f0f0f0;
+  --color-border-light: #eee;
+  --sidebar-width: 240px;
 }
 
+/* =============================
+   SIDEBAR BASE
+============================= */
 
 .sidebar-container {
-    width: 180px;
-    position: sticky;
-    top: 0;
-    height: 100vh; /* still viewport height */
-    overflow-y: auto; /* scrolls if content is taller */
-    background-color: #ffffff;
-    padding: 16px 8px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid var(--color-border-light);
-    color: #00000000;
-    
+  width: var(--sidebar-width);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #ffffff;
+  padding: 16px 8px;
+  border-right: 1px solid var(--color-border-light);
+  overflow-y: auto;
+  z-index: 200; /* ✅ sidebar above hamburger */
 }
 
-.logo-container {
-    margin-bottom: 24px;
-    padding: 8px;
-}
-
-.app-logo {
-    width: 30px; 
-    height: 30px;
-    margin-right: 10px;
-}
-
+/* =============================
+   MENU
+============================= */
 
 .sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-
 .sidebar-item {
-  font-family: "Euclid Circular A";
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: var(--color-text-dark);
-    margin-bottom: 4px;
-    font-size: 17px;
-    transition: background-color 0.1s ease;
-    color: #000000;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--color-text-dark);
+  transition: background-color 0.15s ease;
 }
 
 .sidebar-item:hover {
-    background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light);
+}
+
+.sidebar-item--active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .sidebar-icon {
-    margin-right: 12px;
-    font-size: 18px; 
-    line-height: 1;
+  margin-right: 12px;
+  font-size: 18px;
 }
 
 .sidebar-label {
-    flex-grow: 1;
-    white-space: nowrap;
+  flex-grow: 1;
+  white-space: nowrap;
 }
 
+/* =============================
+   CHEVRON
+============================= */
 
-.sidebar-item--active {
-    background-color: var(--color-primary-light); 
-    font-weight: 600;
-    color: var(--color-primary); 
-}
-
-
-.sidebar-badge {
-    margin-left: auto;
-    background-color: var(--color-background-grey);
-    color: var(--color-text-dark);
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: normal;
-    min-width: 10px;
-    text-align: center;
-}
-
-
-.sidebar-badge--active {
-    background-color: var(--color-secondary-badge); 
-    color: var(--color-background-light);
-    font-weight: 600;
-}
-
-
-.schedule-right-group {
-    display: flex;
-    align-items: center;
-    margin-left: auto; 
-}
-.plus-icon-grey {
-    font-size: 10px;
-    color: var(--color-text-light);
-    margin-right: 4px;
-    padding: 2px;
-    font-weight: 600;
-}
-
-/* --- Collapsible Item Styles (Chevron) --- */
 .sidebar-chevron {
-    margin-left: 8px;
-    font-size: 10px;
-    transition: transform 0.2s;
-    line-height: 1;
+  font-size: 10px;
+  transition: transform 0.2s ease;
 }
+
 .sidebar-chevron.rotated {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
+/* =============================
+   SUBMENU
+============================= */
 
-/* --- Submenu (Income > Earnings, Refunds, etc.) --- */
 .submenu-container {
-    list-style: none;
-    padding: 0;
-    margin: 4px 0 8px 0;
-    padding-left: 32px; 
-    position: relative;
+  list-style: none;
+  padding-left: 32px;
+  margin: 6px 0;
+  position: relative;
 }
 
-/* Vertical line visual for submenu */
 .submenu-container::before {
-    content: '';
-    position: absolute;
-    left: 24px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--color-border-light);
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-border-light);
 }
 
 .submenu-item {
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 2px;
-    font-size: 14px;
-    color: var(--color-text-dark);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--color-text-dark);
 }
 
 .submenu-item:hover {
-    background-color: var(--color-background-grey);
+  background-color: var(--color-background-grey);
 }
 
-/* Active Submenu Item (Refunds) */
 .submenu-item--active {
-    background-color: var(--color-background-grey);
-    font-weight: 600;
-    color: var(--color-text-dark);
+  background-color: var(--color-background-grey);
+  font-weight: 600;
 }
 
-.submenu-arrow {
-    font-size: 10px;
-    font-weight: 800;
+/* =============================
+   HAMBURGER BUTTON
+============================= */
+
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 50; /* 🔻 LOW z-index */
+  font-size: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-/* =========================
-   RESPONSIVE SIDEBAR
-========================= */
+/* =============================
+   OVERLAY
+============================= */
 
-/* -------- Tablet -------- */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 150; /* above hamburger, below sidebar */
+}
+
+/* =============================
+   TABLET
+============================= */
+
 @media (max-width: 992px) {
   .sidebar-container {
-    width: 160px;
-    padding: 14px 6px;
+    width: 180px;
   }
 
   .sidebar-item {
     font-size: 15px;
-    padding: 10px 12px;
-  }
-
-  .sidebar-icon {
-    font-size: 16px;
-    margin-right: 10px;
-  }
-
-  .submenu-container {
-    padding-left: 28px;
-  }
-
-  .submenu-item {
-    font-size: 13px;
   }
 }
 
-/* -------- Mobile -------- */
+/* =============================
+   MOBILE
+============================= */
+
 @media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
   .sidebar-container {
     position: fixed;
-    left: -100%;
     top: 0;
+    left: -100%;
     width: 220px;
     height: 100vh;
-    z-index: 2000;
-    background-color: #ffffff;
     transition: left 0.3s ease;
   }
 
-  /* when sidebar is open */
   .sidebar-container.open {
     left: 0;
   }
-
-  /* overlay effect (optional) */
-  .sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    z-index: 1500;
-  }
-
-  .sidebar-item {
-    font-size: 16px;
-    padding: 12px 16px;
-  }
-
-  .submenu-container {
-    padding-left: 30px;
-  }
 }
 
-/* -------- Very Small Devices -------- */
+/* =============================
+   SMALL DEVICES
+============================= */
+
 @media (max-width: 480px) {
   .sidebar-container {
     width: 200px;
@@ -253,11 +195,4 @@
   .sidebar-label {
     font-size: 14px;
   }
-
-  .sidebar-badge {
-    font-size: 11px;
-    padding: 2px 6px;
-  }
 }
-
-
