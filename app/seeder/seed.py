@@ -1,12 +1,22 @@
 from app.config.db import users_collection, tasks_collection, Meetings_collection
 from bson.objectid import ObjectId
+from app.utils.security import get_password_hash
 
 def seed():
     # Check if admin already exists
     if users_collection.find_one({"email": "admin@skilltrack.com"}):
         print("🌱 Seeder already executed — Admin exists")
         return
-    
+    if not users_collection.find_one({"email": "skilltrackpro@admin.com"}):
+        hashed_pwd = get_password_hash("Admin123@")
+        users_collection.insert_one({
+            "_id": ObjectId(),
+            "name": "Super Admin",
+            "email": "skilltrackpro@admin.com",
+            "password": hashed_pwd,
+            "role": "ADMIN"
+        })
+        print("🌱 Admin user created")
     # Insert default admin
     users_collection.insert_one({
         "_id": ObjectId(),
@@ -33,6 +43,7 @@ def seed():
         "password": "mentor123",
         "role": "mentor"
     })
+    
 
     print("🌱 Seeder executed — Default users created")
 

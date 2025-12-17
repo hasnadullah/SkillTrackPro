@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Sidebar.css";
 
 /* Icons */
@@ -48,7 +48,7 @@ const SidebarItem = ({
 const menuConfig = {
   INTERN: [{ label: "Dashboard", icon: HomeIcon, section: "dashboard" }],
   HR: [
-    { label: "Profile", icon: HomeIcon, section: "profile" },
+    { label: "Dashboard", icon: HomeIcon, section: "profile" },
     { label: "Users", icon: UserIcon, section: "users" },
     { label: "Tasks", icon: TaskIcon, section: "tasks" }
   ],
@@ -58,18 +58,20 @@ const menuConfig = {
     { label: "Meetings", icon: MeetingIcon, section: "meetings" },
     { label: "Give Feedback", icon: FeedbackIcon, section: "feedback" }
   ],
-  PSEB: [
+   PSEB: [
     { label: "Dashboard", icon: HomeIcon, section: "dashboard" },
+    { label: "View Users", icon: UserIcon, section: "users" },
     {
       label: "Task Management",
       icon: AssignIcon,
       isCollapsible: true,
       children: [
         { label: "View Tasks", section: "tasks" },
-        { label: "Assign Task", section: "assign-task" }
-      ]
-    }
-  ]
+        { label: "Assign Task", section: "tasks" },
+      ],
+    },
+    { label: "Meetings", icon: MeetingIcon, section: "meetings" },
+  ],
 };
 
 /* MAIN */
@@ -79,34 +81,34 @@ const Sidebar = ({
   setActiveSection
 }) => {
   const [expandedMenu, setExpandedMenu] = useState(null);
-  const [isOpen, setIsOpen] = useState(false); // ✅ hamburger state
+  const [isOpen, setIsOpen] = useState(false); // hamburger state
 
-  const menuItems = menuConfig[role] || menuConfig.INTERN;
+  // Normalize role to uppercase
+  const normalizedRole = role.toUpperCase();
+  const menuItems = menuConfig[normalizedRole] || menuConfig.INTERN;
+
+  // Auto-expand submenu if activeSection is inside children
+  useEffect(() => {
+    const parent = menuItems.find(item =>
+      item.children?.some(child => child.section === activeSection)
+    );
+    if (parent) setExpandedMenu(parent.label);
+  }, [activeSection, menuItems]);
 
   const handleClick = (section) => {
     setActiveSection(section);
-    setIsOpen(false); // close sidebar on mobile click
+    setIsOpen(false); // close sidebar on mobile
   };
 
   return (
     <>
-      {/* ✅ HAMBURGER BUTTON */}
-      <button
-        className="hamburger-btn"
-        onClick={() => setIsOpen(true)}
-      >
-        ☰
-      </button>
+      {/* Hamburger Button */}
+      <button className="hamburger-btn" onClick={() => setIsOpen(true)}>☰</button>
 
-      {/* ✅ OVERLAY */}
-      {isOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+      {/* Overlay */}
+      {isOpen && <div className="sidebar-overlay" onClick={() => setIsOpen(false)} />}
 
-      {/* ✅ SIDEBAR */}
+      {/* Sidebar */}
       <aside className={`sidebar-container ${isOpen ? "open" : ""}`}>
         <ul className="sidebar-menu">
           {menuItems.map((item, index) => {
